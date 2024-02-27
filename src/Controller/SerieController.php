@@ -8,11 +8,11 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class SerieController extends AbstractController
 {
-    #[Route('/serie', name: 'app_serie')]
-    public function index(): Response
+    #[Route('/series', name: 'app_serie')]
+    public function list(): Response
     {
-        return $this->render('serie/index.html.twig', [
-            'controller_name' => 'SerieController',
-        ]);
+        //todo: allez chercher les série en BDD
+        return $this->render("series/list_series.html.twig");
     }
+
 }

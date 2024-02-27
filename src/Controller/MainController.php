@@ -11,6 +11,7 @@ class MainController extends AbstractController
     #[Route('/', name: 'main_home')]
     public function home(): Response
     {
+        //todo : allez chercher les 10 meilleures séries en BDD pour les afficher
         return $this->render('main/index.html.twig');
     }
 }
