@@ -8,8 +8,8 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class SerieController extends AbstractController
 {
-    #[Route('/series', name: 'app_serie')]
-    public function list(): Response
+    #[Route('/series', name: 'series_list')]
+    public function listSeries(): Response
     {
         //todo: allez chercher les série en BDD
         return $this->render("series/list_series.html.twig");
