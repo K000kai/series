@@ -4,24 +4,28 @@
 
 {% block body %}
     <h1>ceci est ma future page d'accueil</h1>
-    <div class="container">
-        <div id="diaporama" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{ asset('img/téléchargement.jpeg') }}" alt="image_serie" class="d-bloc w-100">
-                    {#todo : afficher les 10 premieres images des séries les plus populaires#}
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('img/image2.jpeg') }}" alt="image_serie" class="d-bloc w-100">
-                    {#todo : afficher les 10 premieres images des séries les plus populaires#}
+    <div class="container" style="margin-bottom: 100px" >
+        <div class="row align-content-center">
+            <div class="col">
+                <div id="diaporama" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ asset('img/téléchargement.jpeg') }}" alt="image_serie" class="d-bloc w-100">
+                            {#todo : afficher les 10 premieres images des séries les plus populaires#}
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ asset('img/image2.jpeg') }}" alt="image_serie" class="d-bloc w-100">
+                            {#todo : afficher les 10 premieres images des séries les plus populaires#}
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#diaporama" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#diaporama" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#diaporama" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#diaporama" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
         </div>
 
     </div>
