@@ -3,7 +3,15 @@
 {% block title %} {{ parent() }} | All Series {% endblock %}
 
 {% block body %}
-    <h1>je dois afficher la liste de toutes les séries</h1>
-    {# todo : afficher toutes les séries#}
-
+    <div class="container" style="margin-bottom: 100px">
+        <section class="series_list">
+            {% for serie in list_serie %}
+            <article>
+                <a href="{{ path('serie_detail', {'id': serie.id})}}" alt="Serie details">
+                    <img src="{{ asset('img/posters/series/') ~ serie.poster }}" alt="{{ serie.name }}">
+                </a>
+            </article>
+            {% endfor %}
+        </section>
+    </div>
 {% endblock %}

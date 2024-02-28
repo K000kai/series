@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <div class="container" style="margin-bottom: 100px">
+                <article>
+                        <h1>{{ serie.name }}</h1>
+                        <img src="{{asset('img/backdrops/' ~ serie.backdrop) }}" alt="">
+                        <p>{{ serie.overview }}</p>
+                </article>
+        </div>
+{% endblock %}
+        
+{% block title %}
+        {{ parent() }} | {{ serie.name }}
+{% endblock %}
+

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\SerieRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -9,9 +10,12 @@ use Symfony\Component\Routing\Attribute\Route;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'main_home')]
-    public function home(): Response
+    public function home(SerieRepository $serieRepository): Response
     {
-        //todo : allez chercher les 10 meilleures séries en BDD pour les afficher
-        return $this->render('main/index.html.twig');
+        $series = $serieRepository->findBy([], ['popularity' => 'DESC', 'vote' => 'DESC'], 10);
+
+        return $this->render('main/index.html.twig',[
+            'series'=>$series
+        ]);
     }
 }
